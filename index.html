@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Genius Provider - Find Jobs. Hire Talent. Grow Your Business.</title>
-    <!-- FontAwesome for Icons -->
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -39,7 +39,6 @@
             line-height: 1.6;
         }
 
-        /* Container */
         .container {
             width: 100%;
             max-width: 1200px;
@@ -47,7 +46,6 @@
             padding: 0 20px;
         }
 
-        /* Typography */
         h1, h2, h3, h4 {
             color: var(--dark);
             font-weight: 700;
@@ -71,7 +69,6 @@
             margin: 0 auto 3rem auto;
         }
 
-        /* Buttons */
         .btn {
             display: inline-block;
             padding: 12px 28px;
@@ -118,7 +115,6 @@
             color: var(--white);
         }
 
-        /* Section Layouts */
         section {
             padding: 80px 0;
         }
@@ -127,7 +123,6 @@
             background-color: var(--light-gray);
         }
 
-        /* Header / Navbar */
         header {
             position: sticky;
             top: 0;
@@ -158,7 +153,7 @@
             display: flex;
             align-items: center;
             list-style: none;
-            gap: 30px;
+            gap: 25px;
         }
 
         .nav-link {
@@ -179,7 +174,6 @@
             color: var(--dark);
         }
 
-        /* Hero Section */
         .hero {
             padding: 100px 0 80px 0;
             background: linear-gradient(135deg, #eff6ff 0%, #f0fdfa 100%);
@@ -209,13 +203,6 @@
             justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
-        }
-
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
         }
 
         .about-text {
@@ -250,7 +237,6 @@
             gap: 10px;
         }
 
-        /* Services Section */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -298,7 +284,6 @@
             margin-top: 40px;
         }
 
-        /* Jobs Section */
         .jobs-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -313,7 +298,7 @@
             border: 1px solid var(--border);
             display: flex;
             flex-direction: column;
-            justify-space-between;
+            justify-content: space-between;
             transition: var(--transition);
         }
 
@@ -356,7 +341,6 @@
             margin-bottom: 8px;
         }
 
-        /* Why Choose Us Section */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -391,7 +375,6 @@
             font-size: 1.05rem;
         }
 
-        /* Contact Section */
         .contact-wrapper {
             max-width: 700px;
             margin: 0 auto;
@@ -400,6 +383,20 @@
             border-radius: var(--radius);
             box-shadow: var(--shadow-md);
             border: 1px solid var(--border);
+        }
+
+        .contact-info-header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .contact-info-header a {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-decoration: none;
         }
 
         .form-group {
@@ -432,7 +429,6 @@
             min-height: 120px;
         }
 
-        /* Policy & Terms Sections */
         .policy-block {
             background: var(--white);
             padding: 30px;
@@ -456,7 +452,6 @@
             margin-bottom: 8px;
         }
 
-        /* Footer */
         footer {
             background-color: var(--dark);
             color: var(--white);
@@ -481,7 +476,7 @@
 
         .footer-info p {
             color: #94a3b8;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .social-links {
@@ -538,7 +533,6 @@
             font-size: 0.9rem;
         }
 
-        /* Responsive Breakpoints */
         @media (max-width: 768px) {
             h1 { font-size: 2.2rem !important; }
             h2 { font-size: 1.75rem !important; }
@@ -590,7 +584,7 @@
                     <li class="nav-item"><a href="#jobs" class="nav-link">Jobs</a></li>
                     <li class="nav-item"><a href="#contact" class="nav-link">Contact Us</a></li>
                     <li class="nav-item">
-                        <a href="#contact" class="btn btn-primary" style="padding: 8px 18px;">Contact Us</a>
+                        <a href="tel:+918368146862" class="btn btn-primary" style="padding: 8px 18px;"><i class="fa-solid fa-phone"></i> +91 8368146862</a>
                     </li>
                 </ul>
                 <div class="hamburger">
@@ -643,25 +637,21 @@
             <p class="section-desc">Comprehensive job solutions for candidates and strategic HR & marketing services for growing businesses.</p>
 
             <div class="services-grid">
-                <!-- Service 1 -->
                 <div class="service-card">
                     <div class="service-icon"><i class="fa-solid fa-bell"></i></div>
                     <h3>Free Job Updates</h3>
                     <p>Get access to the latest job opportunities and apply for jobs according to your skills and experience.</p>
                 </div>
-                <!-- Service 2 -->
                 <div class="service-card">
                     <div class="service-icon"><i class="fa-solid fa-user-plus"></i></div>
                     <h3>Recruitment & Hiring</h3>
                     <p>We help companies find suitable candidates for their hiring and workforce requirements.</p>
                 </div>
-                <!-- Service 3 -->
                 <div class="service-card">
                     <div class="service-icon"><i class="fa-solid fa-users-gear"></i></div>
                     <h3>HR Services</h3>
                     <p>Professional support for candidate sourcing, interview coordination, shortlisting, and recruitment management.</p>
                 </div>
-                <!-- Service 4 -->
                 <div class="service-card">
                     <div class="service-icon"><i class="fa-brands fa-whatsapp"></i></div>
                     <h3>WhatsApp Marketing</h3>
@@ -682,7 +672,6 @@
             <p class="section-desc">Explore active roles and take the next step in your career journey today.</p>
 
             <div class="jobs-grid">
-                <!-- Job Card 1 -->
                 <div class="job-card">
                     <div>
                         <div class="job-header">
@@ -698,7 +687,6 @@
                     <a href="#contact" class="btn btn-outline" onclick="preselectJob('Picker & Packer')">Apply Now</a>
                 </div>
 
-                <!-- Job Card 2 -->
                 <div class="job-card">
                     <div>
                         <div class="job-header">
@@ -714,7 +702,6 @@
                     <a href="#contact" class="btn btn-outline" onclick="preselectJob('Telecaller')">Apply Now</a>
                 </div>
 
-                <!-- Job Card 3 -->
                 <div class="job-card">
                     <div>
                         <div class="job-header">
@@ -779,6 +766,11 @@
             <p class="section-desc">Looking for a job or need candidates for your company? Contact The Genius Provider today.</p>
 
             <div class="contact-wrapper">
+                <div class="contact-info-header">
+                    <p style="margin-bottom: 5px;">Direct Call or WhatsApp:</p>
+                    <a href="tel:+918368146862"><i class="fa-solid fa-phone"></i> +91 8368146862</a>
+                </div>
+
                 <form id="contactForm" onsubmit="handleFormSubmit(event)">
                     <div class="form-group">
                         <label for="fullName">Full Name *</label>
@@ -818,31 +810,99 @@
         </div>
     </section>
 
-    <!-- 8. PRIVACY POLICY & 9. TERMS SECTION -->
+    <!-- 8. PRIVACY POLICY & 9. TERMS & CONDITIONS -->
     <section class="bg-light">
         <div class="container">
-            <!-- 8. Privacy Policy -->
+            <!-- Privacy Policy (Meta Verification Ready) -->
             <div id="privacy-policy" class="policy-block">
                 <h3>Privacy Policy</h3>
-                <p>The Genius Provider respects the privacy of its users.</p>
+                <p><strong>Effective Date:</strong> January 1, 2026</p>
+                <p><strong>Last Updated:</strong> January 1, 2026</p>
+                
+                <p>At <strong>The Genius Provider</strong>, accessible from our website, one of our main priorities is the privacy of our visitors and users. This Privacy Policy document outlines the types of information that is collected and recorded by The Genius Provider and how we use it, in compliance with standard data protection privacy practices and Meta (Facebook/Instagram) business platform requirements.</p>
+
+                <h4 style="margin-top: 15px; margin-bottom: 8px; color: var(--primary);">1. Information We Collect</h4>
+                <p>We collect several types of information from and about users of our website, including:</p>
                 <ul>
-                    <li>We may collect information such as name, mobile number, email address, resume details, job preferences, and other information voluntarily submitted through our website.</li>
-                    <li>This information may be used for job-related communication, recruitment purposes, responding to enquiries, and improving our services.</li>
-                    <li>We do not sell personal information to third parties.</li>
+                    <li><strong>Personal Identification Information:</strong> Name, email address, phone number (+91 8368146862), physical address, and resume/CV details voluntarily provided when filling out our contact forms or job application forms.</li>
+                    <li><strong>Employment & Career Data:</strong> Job preferences, work experience, qualification details, and salary expectations submitted for recruitment purposes.</li>
+                    <li><strong>Log & Technical Data:</strong> Internet Protocol (IP) address, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and click data.</li>
+                    <li><strong>Communication Data:</strong> Records and copies of your correspondence if you contact us via form, email, or WhatsApp messaging.</li>
                 </ul>
+
+                <h4 style="margin-top: 15px; margin-bottom: 8px; color: var(--primary);">2. How We Use Your Information</h4>
+                <p>We use the collected information for various legitimate business purposes, including to:</p>
+                <ul>
+                    <li>Provide, operate, maintain, and optimize our job portal and recruitment services.</li>
+                    <li>Match candidates with suitable job vacancies and share candidate profiles with potential employer clients.</li>
+                    <li>Send job alerts, recruitment updates, and administrative communications via Email, SMS, or WhatsApp.</li>
+                    <li>Respond to candidate and business inquiries submitted through our contact forms.</li>
+                    <li>Analyze website performance, user trends, and improve candidate and employer user experience.</li>
+                    <li>Comply with legal obligations, prevent fraud, and enforce our terms and conditions.</li>
+                </ul>
+
+                <h4 style="margin-top: 15px; margin-bottom: 8px; color: var(--primary);">3. Information Sharing & Third-Party Services</h4>
+                <p>We respect your privacy and do <strong>NOT</strong> sell, trade, or rent your personal identification information to third parties for marketing purposes. However, we may share information in the following circumstances:</p>
+                <ul>
+                    <li><strong>Employer Clients:</strong> Sharing relevant resume details and contact information with registered employers for potential hiring.</li>
+                    <li><strong>Service Providers:</strong> Sharing data with trusted third-party service providers (e.g., hosting partners, communication services like WhatsApp API) who assist in running our website and business operations.</li>
+                    <li><strong>Legal Compliance:</strong> Disclosing information if required by law or in response to valid requests by public authorities.</li>
+                </ul>
+
+                <h4 style="margin-top: 15px; margin-bottom: 8px; color: var(--primary);">4. WhatsApp & Social Media Communication</h4>
+                <p>By opting into our services or submitting forms, you consent to receive communication regarding job opportunities and HR solutions via WhatsApp and social media channels. You can opt out of direct communication at any time by replying "STOP" or notifying us directly.</p>
+
+                <h4 style="margin-top: 15px; margin-bottom: 8px; color: var(--primary);">5. Cookies & Tracking Technologies</h4>
+                <p>The Genius Provider uses standard cookies and web beacons to store visitor preferences, optimize page content based on browser types, and measure marketing campaigns (including Meta Pixels/Analytics). You can choose to disable cookies through your individual browser options.</p>
+
+                <h4 style="margin-top: 15px; margin-bottom: 8px; color: var(--primary);">6. Data Security & Retention</h4>
+                <p>We implement robust technical and organizational security measures to protect your personal data against unauthorized access, alteration, or disclosure. We retain candidate and inquiry data only for as long as necessary to fulfill the recruitment and service goals outlined in this policy.</p>
+
+                <h4 style="margin-top: 15px; margin-bottom: 8px; color: var(--primary);">7. User Data Rights</h4>
+                <p>Under applicable data privacy regulations, users have the following rights regarding their data:</p>
+                <ul>
+                    <li>The right to access and request copies of your personal data held by us.</li>
+                    <li>The right to request correction or updating of inaccurate information.</li>
+                    <li>The right to request the deletion or removal of your personal data from our active databases.</li>
+                </ul>
+
+                <h4 style="margin-top: 15px; margin-bottom: 8px; color: var(--primary);">8. Contact Us For Privacy Queries</h4>
+                <p>If you have questions, concerns, or requests regarding this Privacy Policy or your personal data, please contact us at:</p>
+                <p style="margin-top: 5px;">
+                    <strong>The Genius Provider</strong><br>
+                    <strong>Phone:</strong> +91 8368146862<br>
+                    <strong>Email:</strong> privacy@thegeniusprovider.com<br>
+                    <strong>Address:</strong> Delhi NCR, India
+                </p>
             </div>
 
-            <!-- 9. Terms & Conditions -->
+            <!-- Terms & Conditions -->
             <div id="terms-conditions" class="policy-block" style="margin-bottom: 0;">
                 <h3>Terms & Conditions</h3>
+                <p><strong>Effective Date:</strong> January 1, 2026</p>
+                <p>Welcome to <strong>The Genius Provider</strong>. By accessing or using our website, services, and recruitment platform, you agree to comply with and be bound by the following Terms and Conditions.</p>
+
+                <h4 style="margin-top: 15px; margin-bottom: 8px; color: var(--primary);">1. Acceptance of Terms</h4>
+                <p>By filling out contact forms, applying for job opportunities, or utilizing our services, you accept these terms in full. If you disagree with any part of these terms, please do not use our website or services.</p>
+
+                <h4 style="margin-top: 15px; margin-bottom: 8px; color: var(--primary);">2. Services Provided</h4>
+                <p>The Genius Provider functions as a bridge between candidates seeking job placement and companies searching for workforce/recruitment solutions. We also provide WhatsApp marketing and HR consultation services.</p>
+
+                <h4 style="margin-top: 15px; margin-bottom: 8px; color: var(--primary);">3. Candidate Responsibilities</h4>
                 <ul>
-                    <li>Job availability may change according to company requirements.</li>
-                    <li>Candidates should provide accurate information.</li>
-                    <li>The Genius Provider does not guarantee job selection or employment.</li>
-                    <li>Final hiring decisions are made by the respective employer.</li>
-                    <li>Candidates should verify job details before applying.</li>
-                    <li>Website information and services may be updated when required.</li>
+                    <li>Job candidates must provide accurate, current, and complete personal and professional information.</li>
+                    <li>Candidates are solely responsible for verifying job details, employer credentials, and interview terms prior to acceptance.</li>
+                    <li>Providing false information or submitting fraudulent documents will result in immediate disqualification from our portal.</li>
                 </ul>
+
+                <h4 style="margin-top: 15px; margin-bottom: 8px; color: var(--primary);">4. Disclaimer of Job Guarantee</h4>
+                <p>While The Genius Provider actively assists in matching candidate profiles with recruiters, we do <strong>NOT</strong> guarantee job placement, selection, or interview calls. Final hiring decisions rest entirely with the prospective employer client.</p>
+
+                <h4 style="margin-top: 15px; margin-bottom: 8px; color: var(--primary);">5. Limitation of Liability</h4>
+                <p>The Genius Provider shall not be held liable for any direct, indirect, or incidental loss or damage arising out of employment agreements, candidate-employer disputes, or website service interruptions.</p>
+
+                <h4 style="margin-top: 15px; margin-bottom: 8px; color: var(--primary);">6. Modifications & Updates</h4>
+                <p>We reserve the right to revise or update these Terms & Conditions at any time without prior notice. Continued use of the website following changes indicates your acceptance of the new terms.</p>
             </div>
         </div>
     </section>
@@ -854,12 +914,15 @@
                 <div class="footer-info">
                     <a href="#home" class="footer-logo">The Genius Provider</a>
                     <p>Find Jobs. Hire Talent. Grow Your Business.</p>
+                    <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 15px;">
+                        <i class="fa-solid fa-phone" style="color: var(--primary-light);"></i> +91 8368146862
+                    </p>
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
                         <a href="#" class="social-link"><i class="fa-brands fa-linkedin-in"></i></a>
                         <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://wa.me/918368146862" class="social-link" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
                     </div>
                 </div>
 
@@ -891,7 +954,6 @@
 
     <!-- JavaScript -->
     <script>
-        // Mobile Navigation Toggle
         const hamburger = document.querySelector(".hamburger");
         const navMenu = document.querySelector(".nav-menu");
 
@@ -903,7 +965,6 @@
             navMenu.classList.remove("active");
         }));
 
-        // Automatically preselect 'Looking for a Job' when applying
         function preselectJob(jobName) {
             const serviceDropdown = document.getElementById("serviceType");
             serviceDropdown.value = "Looking for a Job";
@@ -911,7 +972,6 @@
             messageBox.value = "I would like to apply for the position of: " + jobName;
         }
 
-        // Form submission handler
         function handleFormSubmit(event) {
             event.preventDefault();
             alert("Thank you for getting in touch! We have received your request and will contact you shortly.");
