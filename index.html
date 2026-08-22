@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Genius Provider - Find Jobs. Hire Talent. Grow Your Business.</title>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --secondary: #0d9488;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --light-gray: #f8fafc;
+            --white: #ffffff;
+            --border: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            --radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--dark);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            color: var(--dark);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.25rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+
+        .section-desc {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 3rem auto;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background-color: #0f766e;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        /* Section Layouts */
+        section {
+            padding: 80px 0;
+        }
+
+        .bg-light {
+            background-color: var(--light-gray);
+        }
+
+        /* Header / Navbar */
+        header {
+            position: sticky;
+            top: 0;
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--primary-light);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0 80px 0;
+            background: linear-gradient(135deg, #eff6ff 0%, #f0fdfa 100%);
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            text-align: center;
+            gap: 30px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .about-text {
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .about-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--primary);
+        }
+
+        .about-card.vision {
+            border-top-color: var(--secondary);
+        }
+
+        .about-card h3 {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius);
+            background: #dbeafe;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card:nth-child(2) .service-icon { background: #ccfbf1; color: var(--secondary); }
+        .service-card:nth-child(3) .service-icon { background: #fef3c7; color: #d97706; }
+        .service-card:nth-child(4) .service-icon { background: #dcfce7; color: #16a34a; }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .services-cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* Jobs Section */
+        .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .job-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 25px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            justify-space-between;
+            transition: var(--transition);
+        }
+
+        .job-card:hover {
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow-md);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .job-title {
+            font-size: 1.2rem;
+        }
+
+        .job-badge {
+            background: #dbeafe;
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .job-details {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .job-details li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        /* Why Choose Us Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+        }
+
+        .feature-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #eff6ff;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .feature-card h4 {
+            font-size: 1.05rem;
+        }
+
+        /* Contact Section */
+        .contact-wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Policy & Terms Sections */
+        .policy-block {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            margin-bottom: 30px;
+        }
+
+        .policy-block h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .policy-block ul {
+            padding-left: 20px;
+            color: var(--gray);
+        }
+
+        .policy-block ul li {
+            margin-bottom: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 60px 0 30px 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 15px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .footer-info p {
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 36px;
+            height: 36px;
+            background: #1e293b;
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary-light);
+        }
+
+        .footer-links-title {
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-links-list {
+            list-style: none;
+        }
+
+        .footer-links-list li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links-list a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links-list a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #1e293b;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem !important; }
+            h2 { font-size: 1.75rem !important; }
+
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background-color: var(--white);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: var(--shadow-md);
+                padding: 20px 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 15px 0;
+            }
+
+            .contact-wrapper {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. HEADER / NAVIGATION BAR -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#home" class="logo">
+                    <i class="fa-solid fa-briefcase"></i> The Genius Provider
+                </a>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About Us</a></li>
+                    <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="#jobs" class="nav-link">Jobs</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact Us</a></li>
+                    <li class="nav-item">
+                        <a href="#contact" class="btn btn-primary" style="padding: 8px 18px;">Contact Us</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>Find Jobs. Hire Talent. Grow Your Business.</h1>
+                <p>The Genius Provider helps job seekers discover new job opportunities and supports businesses with recruitment, hiring, HR services, and WhatsApp marketing solutions.</p>
+                <div class="hero-btns">
+                    <a href="#jobs" class="btn btn-primary">Find Jobs</a>
+                    <a href="#contact" class="btn btn-secondary">Hire Candidates</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ABOUT US SECTION -->
+    <section id="about">
+        <div class="container">
+            <h2>About The Genius Provider</h2>
+            <p class="about-text">
+                The Genius Provider is focused on connecting job seekers with suitable employment opportunities and helping companies fulfill their hiring requirements.
+                We provide free job updates for candidates and professional recruitment solutions for businesses.
+                Our services include candidate sourcing, bulk hiring, recruitment support, HR services, and WhatsApp marketing solutions.
+            </p>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3><i class="fa-solid fa-bullseye" style="color: var(--primary);"></i> Our Mission</h3>
+                    <p>To help job seekers discover better employment opportunities and make the hiring process easier for businesses.</p>
+                </div>
+                <div class="about-card vision">
+                    <h3><i class="fa-solid fa-eye" style="color: var(--secondary);"></i> Our Vision</h3>
+                    <p>To become a trusted platform for job seekers and businesses looking for reliable recruitment and HR solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SERVICES SECTION -->
+    <section id="services" class="bg-light">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p class="section-desc">Comprehensive job solutions for candidates and strategic HR & marketing services for growing businesses.</p>
+
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-bell"></i></div>
+                    <h3>Free Job Updates</h3>
+                    <p>Get access to the latest job opportunities and apply for jobs according to your skills and experience.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-user-plus"></i></div>
+                    <h3>Recruitment & Hiring</h3>
+                    <p>We help companies find suitable candidates for their hiring and workforce requirements.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-users-gear"></i></div>
+                    <h3>HR Services</h3>
+                    <p>Professional support for candidate sourcing, interview coordination, shortlisting, and recruitment management.</p>
+                </div>
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                    <h3>WhatsApp Marketing</h3>
+                    <p>Business communication and WhatsApp marketing solutions to connect with customers and candidates.</p>
+                </div>
+            </div>
+
+            <div class="services-cta">
+                <a href="#contact" class="btn btn-primary">Contact Us For Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. JOBS SECTION -->
+    <section id="jobs">
+        <div class="container">
+            <h2>Latest Job Opportunities</h2>
+            <p class="section-desc">Explore active roles and take the next step in your career journey today.</p>
+
+            <div class="jobs-grid">
+                <!-- Job Card 1 -->
+                <div class="job-card">
+                    <div>
+                        <div class="job-header">
+                            <h3 class="job-title">Picker & Packer</h3>
+                            <span class="job-badge">Full-Time</span>
+                        </div>
+                        <ul class="job-details">
+                            <li><i class="fa-solid fa-location-dot"></i> Delhi NCR</li>
+                            <li><i class="fa-solid fa-indian-rupee-sign"></i> ₹15,000 – ₹25,000 / month</li>
+                            <li><i class="fa-solid fa-briefcase"></i> Fresher / Experienced</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="btn btn-outline" onclick="preselectJob('Picker & Packer')">Apply Now</a>
+                </div>
+
+                <!-- Job Card 2 -->
+                <div class="job-card">
+                    <div>
+                        <div class="job-header">
+                            <h3 class="job-title">Telecaller</h3>
+                            <span class="job-badge">Full-Time</span>
+                        </div>
+                        <ul class="job-details">
+                            <li><i class="fa-solid fa-location-dot"></i> Delhi</li>
+                            <li><i class="fa-solid fa-indian-rupee-sign"></i> ₹12,000 – ₹20,000 / month</li>
+                            <li><i class="fa-solid fa-briefcase"></i> Minimum 3 Months</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="btn btn-outline" onclick="preselectJob('Telecaller')">Apply Now</a>
+                </div>
+
+                <!-- Job Card 3 -->
+                <div class="job-card">
+                    <div>
+                        <div class="job-header">
+                            <h3 class="job-title">HR Executive</h3>
+                            <span class="job-badge">Full-Time</span>
+                        </div>
+                        <ul class="job-details">
+                            <li><i class="fa-solid fa-location-dot"></i> Delhi NCR</li>
+                            <li><i class="fa-solid fa-indian-rupee-sign"></i> ₹15,000 – ₹25,000 / month</li>
+                            <li><i class="fa-solid fa-briefcase"></i> 6 Months+</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="btn btn-outline" onclick="preselectJob('HR Executive')">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. WHY CHOOSE US SECTION -->
+    <section class="bg-light">
+        <div class="container">
+            <h2>Why Choose Us</h2>
+            <p class="section-desc">We bridge the gap between talented job seekers and high-growth organizations.</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-bell"></i></div>
+                    <h4>Free Job Updates</h4>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-briefcase"></i></div>
+                    <h4>Latest Job Opportunities</h4>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-paper-plane"></i></div>
+                    <h4>Easy Application Process</h4>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
+                    <h4>Recruitment Support</h4>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-users"></i></div>
+                    <h4>Bulk Hiring Solutions</h4>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-user-gear"></i></div>
+                    <h4>Professional HR Services</h4>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-comments"></i></div>
+                    <h4>Quick Communication</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. CONTACT SECTION -->
+    <section id="contact">
+        <div class="container">
+            <h2>Get In Touch With Us</h2>
+            <p class="section-desc">Looking for a job or need candidates for your company? Contact The Genius Provider today.</p>
+
+            <div class="contact-wrapper">
+                <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" class="form-control" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobileNumber">Mobile Number *</label>
+                        <input type="tel" id="mobileNumber" class="form-control" placeholder="Enter your mobile number" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="emailAddress">Email Address *</label>
+                        <input type="email" id="emailAddress" class="form-control" placeholder="Enter your email address" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="serviceType">Select Service *</label>
+                        <select id="serviceType" class="form-control" required>
+                            <option value="">-- Choose an option --</option>
+                            <option value="Looking for a Job">Looking for a Job</option>
+                            <option value="Recruitment & Hiring">Recruitment & Hiring</option>
+                            <option value="HR Services">HR Services</option>
+                            <option value="WhatsApp Marketing">WhatsApp Marketing</option>
+                            <option value="Other Enquiry">Other Enquiry</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" class="form-control" placeholder="Write your query or details here..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. PRIVACY POLICY & 9. TERMS SECTION -->
+    <section class="bg-light">
+        <div class="container">
+            <!-- 8. Privacy Policy -->
+            <div id="privacy-policy" class="policy-block">
+                <h3>Privacy Policy</h3>
+                <p>The Genius Provider respects the privacy of its users.</p>
+                <ul>
+                    <li>We may collect information such as name, mobile number, email address, resume details, job preferences, and other information voluntarily submitted through our website.</li>
+                    <li>This information may be used for job-related communication, recruitment purposes, responding to enquiries, and improving our services.</li>
+                    <li>We do not sell personal information to third parties.</li>
+                </ul>
+            </div>
+
+            <!-- 9. Terms & Conditions -->
+            <div id="terms-conditions" class="policy-block" style="margin-bottom: 0;">
+                <h3>Terms & Conditions</h3>
+                <ul>
+                    <li>Job availability may change according to company requirements.</li>
+                    <li>Candidates should provide accurate information.</li>
+                    <li>The Genius Provider does not guarantee job selection or employment.</li>
+                    <li>Final hiring decisions are made by the respective employer.</li>
+                    <li>Candidates should verify job details before applying.</li>
+                    <li>Website information and services may be updated when required.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <a href="#home" class="footer-logo">The Genius Provider</a>
+                    <p>Find Jobs. Hire Talent. Grow Your Business.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-links-title">Quick Links</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#jobs">Jobs</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-links-title">Legal</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="#privacy-policy">Privacy Policy</a></li>
+                        <li><a href="#terms-conditions">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Genius Provider. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+        });
+
+        document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+            navMenu.classList.remove("active");
+        }));
+
+        // Automatically preselect 'Looking for a Job' when applying
+        function preselectJob(jobName) {
+            const serviceDropdown = document.getElementById("serviceType");
+            serviceDropdown.value = "Looking for a Job";
+            const messageBox = document.getElementById("message");
+            messageBox.value = "I would like to apply for the position of: " + jobName;
+        }
+
+        // Form submission handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            alert("Thank you for getting in touch! We have received your request and will contact you shortly.");
+            document.getElementById("contactForm").reset();
+        }
+    </script>
+</body>
+</html>
